@@ -17,5 +17,10 @@ describe "#duplicate_encoder" do
     expect(duplicate_encode('aA')).to eq('))')
   end
 
-  # DON'T FORGET EDGE CASE OF CAPITALISED LETTERS
+  it 'handles a mixture of duplicated and non-duplicated letters' do
+    expect(duplicate_encode('recede')).to eq('()()()')
+    expect(duplicate_encode("Success")).to eq(")())())")
+    expect(duplicate_encode("(( @")).to eq("))((")
+    expect(duplicate_encode('fee')).to eq('())')
+  end
 end
