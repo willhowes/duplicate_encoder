@@ -1,13 +1,10 @@
 def duplicate_encode(word)
-  result = []
-  word.downcase!
-  word.split('').each do |char|
-    if word.count(char) == 1
-      result << "("
+  result = word.split('').map do |char|
+    if word.downcase.count(char) == 1
+      "("
     else
-      result << ")"
+      ")"
     end
-
   end
   result.join('')
 end
