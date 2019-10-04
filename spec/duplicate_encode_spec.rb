@@ -13,5 +13,9 @@ describe "#duplicate_encoder" do
     expect(duplicate_encode('aa')).to eq('))')
   end
 
+  it 'returns "))" for two letters the same but one capitalized' do
+    expect(duplicate_encode('aA')).to eq('))')
+  end
+
   # DON'T FORGET EDGE CASE OF CAPITALISED LETTERS
 end
