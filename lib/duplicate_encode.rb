@@ -1,7 +1,12 @@
 def duplicate_encode(word)
   result = []
   word.split('') do |char|
-    result << "("
+    if word.count(char) == 1
+      result << "("
+    else
+      result << ")"
+    end
+
   end
   result.join('')
 end
