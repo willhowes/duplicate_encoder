@@ -23,4 +23,8 @@ describe "#duplicate_encoder" do
     expect(duplicate_encode("(( @")).to eq("))((")
     expect(duplicate_encode('fee')).to eq('())')
   end
+
+  it 'handles capital letters that only appear once' do
+    expect(duplicate_encode("CodeWarrior")).to eq('()(((())())')
+  end
 end

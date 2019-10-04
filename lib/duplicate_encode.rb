@@ -1,6 +1,7 @@
 def duplicate_encode(word)
+  word.downcase!
   result = word.split('').map do |char|
-    if word.downcase.count(char) == 1
+    if word.count(char) == 1
       "("
     else
       ")"
